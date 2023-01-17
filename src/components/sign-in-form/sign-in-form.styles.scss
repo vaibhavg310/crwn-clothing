@@ -3,9 +3,16 @@
     flex-direction: column;
     width: 500px;
     margin: 10px;
-    overflow-x: hidden;
+
 }
 
 h2{
     margin: 10px 0;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px
 }
