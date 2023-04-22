@@ -1,6 +1,6 @@
 import {Fragment} from 'react';
 import { Outlet, Link} from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
 //import { UserContext } from '../../contexts/user.context';
@@ -8,7 +8,7 @@ import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
 
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
-import { signOutStart } from '../../store/user/user.action';
+
 
 import {signOutUser} from '../../utils/firebase/firebase.utils'
 import CartIcon from '../../components/cart-icon/cart-icon.component';
@@ -20,13 +20,8 @@ const Navigation = () => {
   //const {currentUser} = useContext(UserContext); 
   // const {isCartOpen} = useContext(CartContext); 
 
-  const dispatch = useDispatch();
-
-
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
-
-  const signOutUser = () => dispatch(signOutStart());
 
   // const signOutHandler = async() => {    
   //    await signOutUser();
