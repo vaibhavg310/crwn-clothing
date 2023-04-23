@@ -43,23 +43,23 @@ const clearCartItem = (cartItems, cartItemToClear) => {
 }
 
 
-export const setIsCartOpen = (boolean) =>
-  createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean);
+// export const setIsCartOpen = (boolean) =>
+//   createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean);
 
-export const addItemToCart = (cartItems, productToAdd) => {
-    const newCartItems = addCartItem(cartItems, productToAdd);
-   return createAction(CART_ACTION_TYPES.SET_CART_ITEMS ,newCartItems);
-}
+// export const addItemToCart = (cartItems, productToAdd) => {
+//     const newCartItems = addCartItem(cartItems, productToAdd);
+//    return createAction(CART_ACTION_TYPES.SET_CART_ITEMS ,newCartItems);
+// }
 
-export const removeItemFromCart = (cartItems, cartItemToRemove) => {
-    const newCartItems = removeCartItem(cartItems, cartItemToRemove);
-    return createAction(CART_ACTION_TYPES.SET_CART_ITEMS ,newCartItems);
- }
+// export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+//     const newCartItems = removeCartItem(cartItems, cartItemToRemove);
+//     return createAction(CART_ACTION_TYPES.SET_CART_ITEMS ,newCartItems);
+//  }
 
-export const clearItemFromCart = (cartItems, cartItemToClear) => {
-    const newCartItems = clearCartItem(cartItems, cartItemToClear);
-    return createAction(CART_ACTION_TYPES.SET_CART_ITEMS ,newCartItems);
-}
+// export const clearItemFromCart = (cartItems, cartItemToClear) => {
+//     const newCartItems = clearCartItem(cartItems, cartItemToClear);
+//     return createAction(CART_ACTION_TYPES.SET_CART_ITEMS ,newCartItems);
+// }
 
 
 export const CART_INITIAL_STATE = {
@@ -74,10 +74,23 @@ export const cartSlice = createSlice({
     reducers: {
         addItemToCart (state, action) {
             state.cartItems = addCartItem(state.cartItems, action.payload);
+        },
+        removeItemFromCart (state, action) {
+            state.cartItems = removeCartItem(state.cartItems, action.payload);
+        },
+        clearItemFromCart (state, action) {
+            state.cartItems = clearCartItem(state.cartItems, action.payload);
+        },
+        setIsCartOpen (state, action) {
+            state.isCartOpen = action.payload;
         }
+
     }
 })
 
+export const {addItemToCart, removeItemFromCart, clearItemFromCart, setIsCartOpen} = cartSlice.actions;
+
+export default cartReducer =  cartSlice.reducer;
 
 // export const cartReducer = (state = CART_INITIAL_STATE, action = {}) => {
 //     const {type, payload} = action;
