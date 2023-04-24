@@ -90,7 +90,7 @@ export const cartSlice = createSlice({
 
 export const {addItemToCart, removeItemFromCart, clearItemFromCart, setIsCartOpen} = cartSlice.actions;
 
-export default cartReducer =  cartSlice.reducer;
+export const cartReducer =  cartSlice.reducer;
 
 // export const cartReducer = (state = CART_INITIAL_STATE, action = {}) => {
 //     const {type, payload} = action;

@@ -20,7 +20,7 @@ const CheckoutItem = ({cartItem}) => {
     const removeItemHandler = () => dispatch(removeItemFromCart(cartItem));
 
     return (
-        <div className='checkout-item-conatiner'>
+        <div className='checkout-item-container'>
             <div className='image-container'>
                 <img src ={imageUrl} alt={`${name}`}/>
             </div>

@@ -17,7 +17,7 @@ const Category = () => {
   //const {categoriesMap} = useContext(CategoriesContext);    
 
   const categoriesMap = useSelector(selectCategoriesMap);
-    const [products, setProducts] = useState([categoriesMap[category]]);
+    const [products, setProducts] = useState(categoriesMap[category]);
 
     useEffect(() => {
         setProducts(categoriesMap[category]);
